@@ -1,17 +1,29 @@
 import React from 'react';
 import './App.css';
-import Customer from './components/Customer';
-import Employee from './components/Employee';
-import Counter from './components/Counter';
-import Greetings from './components/Greetings';
-import LoginForm from './components/LoginForm';
-import UserList from './components/UserList';
+// import Customer from './components/Customer';
+// import Employee from './components/Employee';
+// import Counter from './components/Counter';
+// import Greetings from './components/Greetings';
+// import LoginForm from './components/LoginForm';
+// import UserList from './components/UserList';
+// import UserAxiosList from './components/UserAxiosList';
+import Navbar from './components/Navbar';
+import {Routes, Route, Navigate} from 'react-router-dom'
 import UserAxiosList from './components/UserAxiosList';
+import UserDetails from './components/UserDetails';
+import About from './components/About';
 
 function App() {
   return (
     <>
-      <div className="container mt-3">
+      <Navbar/>
+      <Routes>
+        <Route path={"/"} element={<Navigate to={'/contacts/list'}/>}/>
+        <Route path={'/contacts/list'} element={<UserAxiosList/>}/>
+        <Route path={'/contacts/:id'} element={<UserDetails/>}/>
+        <Route path={'/about'} element={<About/>}/>
+      </Routes>
+      {/* <div className="container mt-3">
         <div className="grid">
           <div className="row">
             <div className="col">
@@ -57,7 +69,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

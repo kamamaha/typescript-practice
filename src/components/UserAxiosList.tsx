@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IUserAxios } from "../models/IUserAxios";
 import { UserAxiosService } from "../services/UserAxiosService";
+import {Link} from 'react-router-dom'
 
 interface IState {
     loading: boolean;
@@ -35,6 +36,16 @@ useEffect(() => {
 const {loading, users, errorMessage} = state
     return(
         <>
+        <div className="container mt-3">
+            <div className="row">
+                <div className="col">
+                    <h3 className="h3 fw-bold text-success">User List</h3>
+                    <p className="fst-italic">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nulla voluptas perferendis totam temporibus. Obcaecati atque assumenda laboriosam, cum fuga, odio ducimus vero voluptate alias tempora nihil. Consequuntur, nihil repellat.
+                    </p>
+                </div>
+            </div>
+        </div>
         <div className="container">
             <div className="row">
                 <div className="col">
@@ -55,7 +66,10 @@ const {loading, users, errorMessage} = state
                                     return(
                                        <tr key={user.id}>
                                             <td>{user.id}</td>
-                                            <td>{user.name}</td>
+                                            <td>
+                                                <Link to={`/contacts/${user.id}`} className="text-decoration-none text-success fw-bold">{user.name}</Link>
+                                                
+                                            </td>
                                             <td>{user.email}</td>
                                             <td>{user.phone}</td>
                                             <td>{user.company.name}</td>

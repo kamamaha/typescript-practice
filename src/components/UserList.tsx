@@ -39,7 +39,7 @@ const [state, setState] = useState<IState>({
     return(
         <>
         <pre>{JSON.stringify(state.users)}</pre>
-            <div className="container">
+            <div className="container mt-3">
                 <div className="row">
                     <div className="col">
                         <p className="h3">User List</p>

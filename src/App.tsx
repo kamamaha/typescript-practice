@@ -6,6 +6,7 @@ import Counter from './components/Counter';
 import Greetings from './components/Greetings';
 import LoginForm from './components/LoginForm';
 import UserList from './components/UserList';
+import UserAxiosList from './components/UserAxiosList';
 
 function App() {
   return (
@@ -48,6 +49,11 @@ function App() {
           <div className="row">
             <div className="col">
               <UserList/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <UserAxiosList/>
             </div>
           </div>
         </div>
